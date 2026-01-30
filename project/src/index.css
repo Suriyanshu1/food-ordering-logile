@@ -1,0 +1,1362 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.5s ease-out;
+  }
+
+  /* Transport Page Animations */
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes scroll-indicator {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  @keyframes slide-down-transport {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 1000px;
+    }
+  }
+
+  @keyframes scale-in-transport {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+    }
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Car Animation Keyframes */
+  @keyframes car-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  @keyframes headlight-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.8));
+      opacity: 1;
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(254, 240, 138, 1));
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes taillight-pulse {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.8));
+    }
+    50% {
+      opacity: 0.7;
+      filter: drop-shadow(0 0 10px rgba(239, 68, 68, 1));
+    }
+  }
+
+  @keyframes road-move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100px);
+    }
+  }
+
+  @keyframes speed-line {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%) scaleX(0.5);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateX(0) scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%) scaleX(0.5);
+    }
+  }
+
+  @keyframes particle-float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.3;
+    }
+    25% {
+      transform: translateY(-30px) rotate(90deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-50px) rotate(180deg);
+      opacity: 0.3;
+    }
+    75% {
+      transform: translateY(-30px) rotate(270deg);
+      opacity: 0.5;
+    }
+  }
+
+  .animate-hero-fade-in {
+    animation: hero-fade-in 1s ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-scroll-indicator {
+    animation: scroll-indicator 1.5s ease-in-out infinite;
+  }
+
+  .animate-slide-down-transport {
+    animation: slide-down-transport 0.4s ease-out forwards;
+  }
+
+  .animate-scale-in-transport {
+    animation: scale-in-transport 0.3s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+
+  .animate-car-body {
+    animation: car-bounce 0.3s ease-in-out infinite;
+  }
+
+  .animate-headlight {
+    animation: headlight-glow 1s ease-in-out infinite;
+  }
+
+  .animate-taillight {
+    animation: taillight-pulse 0.5s ease-in-out infinite;
+  }
+
+  .animate-road-line {
+    animation: road-move 0.5s linear infinite;
+  }
+
+  .animate-speed-line {
+    animation: speed-line 1s ease-out infinite;
+  }
+
+  .animate-particle {
+    animation: particle-float 4s ease-in-out infinite;
+  }
+
+  /* Exhaust smoke animation */
+  @keyframes exhaust {
+    0% {
+      opacity: 0.4;
+      transform: translateX(0) scale(1);
+    }
+    50% {
+      opacity: 0.2;
+      transform: translateX(-15px) scale(1.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-30px) scale(2);
+    }
+  }
+
+  .animate-exhaust {
+    animation: exhaust 0.8s ease-out infinite;
+  }
+
+  /* Dust particle animation */
+  @keyframes dust {
+    0% {
+      opacity: 0.3;
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px) translateX(-30px) scale(0.5);
+    }
+  }
+}
+
+/* Dark theme for date picker / calendar */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge date picker styling */
+::-webkit-datetime-edit {
+  color: white;
+}
+
+::-webkit-datetime-edit-fields-wrapper {
+  background: transparent;
+}
+
+::-webkit-datetime-edit-text {
+  color: #9ca3af;
+}
+
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-year-field {
+  color: white;
+}
+
+/* Style the calendar dropdown */
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.8;
+}
+
+/* Firefox date picker */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* Smooth car animation class */
+.car-smooth {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Pure CSS road animation - 60fps */
+.road-lines-container {
+  width: 200%;
+}
+
+.road-lines {
+  display: inline-flex;
+}
+
+@keyframes road-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.road-lines-container {
+  animation: road-scroll 3s linear infinite;
+  will-change: transform;
+}
+
+/* Wheel spin animation */
+@keyframes wheel-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wheel-spin {
+  animation: wheel-rotate 0.5s linear infinite;
+  will-change: transform;
+}
+
+/* Speed lines CSS animation */
+@keyframes speed-line-move {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+.speed-line {
+  animation: speed-line-move 2s linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Food illustration animations */
+@keyframes plate-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes food-float-1 {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+}
+
+@keyframes food-float-2 {
+  0%, 100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(18deg);
+  }
+}
+
+@keyframes food-float-3 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes food-float-4 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1);
+  }
+}
+
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-30px) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-plate-float {
+  animation: plate-float 4s ease-in-out infinite;
+}
+
+.animate-food-float-1 {
+  animation: food-float-1 3s ease-in-out infinite;
+}
+
+.animate-food-float-2 {
+  animation: food-float-2 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.animate-food-float-3 {
+  animation: food-float-3 2.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-food-float-4 {
+  animation: food-float-4 2.5s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+.animate-steam {
+  animation: steam 2s ease-out infinite;
+}
+
+/* Enhanced Food Animation Keyframes */
+
+/* Glow pulse for plate background */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Shadow pulse under plate */
+@keyframes shadow-pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+    opacity: 0.2;
+  }
+}
+
+.animate-shadow-pulse {
+  animation: shadow-pulse 4s ease-in-out infinite;
+}
+
+/* Fork movement - Arc towards plate then subtle sway */
+@keyframes fork-move {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  15% {
+    transform: rotate(35deg) translateX(15px);
+  }
+  30% {
+    transform: rotate(0deg) translateX(0);
+  }
+  45% {
+    transform: rotate(-3deg) translateX(-2px);
+  }
+  60% {
+    transform: rotate(3deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-2deg) translateX(-1px);
+  }
+  90% {
+    transform: rotate(2deg) translateX(1px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+.animate-fork-move {
+  animation: fork-move 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Spoon movement - Arc towards plate then subtle sway */
+@keyframes spoon-move {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  15% {
+    transform: rotate(-35deg) translateX(-15px);
+  }
+  30% {
+    transform: rotate(0deg) translateX(0);
+  }
+  45% {
+    transform: rotate(3deg) translateX(2px);
+  }
+  60% {
+    transform: rotate(-3deg) translateX(-2px);
+  }
+  75% {
+    transform: rotate(2deg) translateX(1px);
+  }
+  90% {
+    transform: rotate(-2deg) translateX(-1px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
+.animate-spoon-move {
+  animation: spoon-move 4s ease-in-out infinite;
+  animation-delay: 0.2s;
+  transform-origin: bottom center;
+}
+
+/* Roti flip animation */
+@keyframes roti-flip {
+  0%, 100% {
+    transform: translateX(-50%) rotateX(0deg) translateY(0);
+  }
+  25% {
+    transform: translateX(-50%) rotateX(10deg) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-50%) rotateX(0deg) translateY(-10px);
+  }
+  75% {
+    transform: translateX(-50%) rotateX(-10deg) translateY(-5px);
+  }
+}
+
+.animate-roti-flip {
+  animation: roti-flip 3s ease-in-out infinite;
+}
+
+/* Curry bubble animation */
+@keyframes curry-bubble {
+  0%, 100% {
+    transform: rotate(6deg) scale(1);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+}
+
+.animate-curry-bubble {
+  animation: curry-bubble 2.5s ease-in-out infinite;
+}
+
+/* Individual bubbles */
+@keyframes bubble-rise-1 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.2);
+    opacity: 0.5;
+  }
+}
+
+@keyframes bubble-rise-2 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-4px) scale(1.3);
+    opacity: 0.4;
+  }
+}
+
+@keyframes bubble-rise-3 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-3px) scale(1.1);
+    opacity: 0.35;
+  }
+}
+
+.animate-bubble-1 {
+  animation: bubble-rise-1 1.5s ease-in-out infinite;
+}
+
+.animate-bubble-2 {
+  animation: bubble-rise-2 1.8s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-bubble-3 {
+  animation: bubble-rise-3 2s ease-in-out infinite;
+  animation-delay: 0.6s;
+}
+
+/* Rice scatter animation */
+@keyframes rice-scatter {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(2deg);
+  }
+}
+
+.animate-rice-scatter {
+  animation: rice-scatter 3s ease-in-out infinite;
+}
+
+/* Rice grain animation */
+@keyframes grain-jump {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+.animate-grain {
+  animation: grain-jump 1.5s ease-in-out infinite;
+}
+
+/* Veggie bounce */
+@keyframes veggie-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+  }
+}
+
+.animate-veggie-bounce {
+  animation: veggie-bounce 2s ease-in-out infinite;
+}
+
+.animate-veggie-bounce-2 {
+  animation: veggie-bounce 2.2s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+/* Chili wiggle */
+@keyframes chili-wiggle {
+  0%, 100% {
+    transform: rotate(-45deg) translateX(0);
+  }
+  25% {
+    transform: rotate(-40deg) translateX(2px);
+  }
+  75% {
+    transform: rotate(-50deg) translateX(-2px);
+  }
+}
+
+.animate-chili-wiggle {
+  animation: chili-wiggle 2s ease-in-out infinite;
+}
+
+/* Enhanced steam rise */
+@keyframes steam-rise {
+  0% {
+    transform: translateY(0) scaleY(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-40px) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-steam-rise {
+  animation: steam-rise 2.5s ease-out infinite;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========== FOOD PAGE BACKGROUND ANIMATIONS ========== */
+
+/* Gradient shift animation */
+@keyframes gradient-shift-bg {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift-bg 15s ease infinite;
+}
+
+/* Floating orbs */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 25px) scale(0.95);
+  }
+  66% {
+    transform: translate(35px, -20px) scale(1.05);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-float-slow-reverse {
+  animation: float-slow-reverse 18s ease-in-out infinite;
+}
+
+/* Pulse slow */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Mesh pattern movement */
+@keyframes mesh-move {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(40px, 40px);
+  }
+}
+
+.animate-mesh-move {
+  animation: mesh-move 20s linear infinite;
+}
+
+/* Floating emoji animation */
+@keyframes float-emoji {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.15;
+  }
+  25% {
+    transform: translateY(-30px) rotate(10deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translateY(-50px) rotate(-5deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateY(-30px) rotate(8deg);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.15;
+  }
+}
+
+.animate-float-emoji {
+  animation: float-emoji 10s ease-in-out infinite;
+}
+
+/* Glow particle animation */
+@keyframes glow-particle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+.animate-glow-particle {
+  animation: glow-particle 5s ease-in-out infinite;
+}
+
+/* Light ray animations */
+@keyframes ray-move-1 {
+  0%, 100% {
+    opacity: 0.1;
+    transform: skewX(-12deg) translateY(-10%);
+  }
+  50% {
+    opacity: 0.2;
+    transform: skewX(-12deg) translateY(10%);
+  }
+}
+
+@keyframes ray-move-2 {
+  0%, 100% {
+    opacity: 0.08;
+    transform: skewX(6deg) translateY(5%);
+  }
+  50% {
+    opacity: 0.15;
+    transform: skewX(6deg) translateY(-5%);
+  }
+}
+
+@keyframes ray-move-3 {
+  0%, 100% {
+    opacity: 0.1;
+    transform: skewX(12deg) translateY(-5%);
+  }
+  50% {
+    opacity: 0.18;
+    transform: skewX(12deg) translateY(8%);
+  }
+}
+
+.animate-ray-1 {
+  animation: ray-move-1 12s ease-in-out infinite;
+}
+
+.animate-ray-2 {
+  animation: ray-move-2 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-ray-3 {
+  animation: ray-move-3 14s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* ========== CAPYBARA EATING ANIMATIONS ========== */
+
+/* Capybara head bobbing while eating */
+@keyframes capy-head-bob {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(3px) rotate(-2deg);
+  }
+  40% {
+    transform: translateY(0) rotate(0deg);
+  }
+  60% {
+    transform: translateY(4px) rotate(2deg);
+  }
+  80% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.animate-capy-head-bob {
+  animation: capy-head-bob 1.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+/* Capybara arms holding and bringing food to mouth */
+@keyframes capy-arms {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-capy-arms {
+  animation: capy-arms 1.5s ease-in-out infinite;
+}
+
+/* Food moving to mouth */
+@keyframes capy-food {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-6px) scale(0.95);
+  }
+  50% {
+    transform: translateY(-3px) scale(1);
+  }
+  75% {
+    transform: translateY(-8px) scale(0.92);
+  }
+}
+
+.animate-capy-food {
+  animation: capy-food 1.5s ease-in-out infinite;
+}
+
+/* Mouth chewing animation */
+@keyframes capy-mouth {
+  0%, 100% {
+    d: path("M 60 65 Q 70 72 80 65");
+  }
+  50% {
+    d: path("M 60 65 Q 70 68 80 65");
+  }
+}
+
+.animate-capy-mouth {
+  animation: capy-mouth 0.5s ease-in-out infinite;
+}
+
+/* Crumbs falling */
+@keyframes crumb-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(60px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-crumb-fall {
+  animation: crumb-fall 2s ease-in infinite;
+}
+
+/* Nom nom text animation */
+@keyframes nom-text {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  25% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(-5px) scale(1.1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(-3px) scale(1.08);
+  }
+}
+
+.animate-nom-text {
+  animation: nom-text 1.5s ease-in-out infinite;
+}
+
+/* Floating hearts */
+@keyframes hearts-float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes hearts-float-2 {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-8px) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.animate-hearts-float {
+  animation: hearts-float 2s ease-in-out infinite;
+}
+
+.animate-hearts-float-2 {
+  animation: hearts-float-2 2.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Angry capybara shake animation */
+@keyframes capy-shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  20% { transform: translateX(-5px) rotate(-4deg); }
+  40% { transform: translateX(5px) rotate(4deg); }
+  60% { transform: translateX(-5px) rotate(-4deg); }
+  80% { transform: translateX(5px) rotate(4deg); }
+}
+
+.animate-capy-shake {
+  animation: capy-shake 0.4s ease-in-out;
+}
+
+/* ============================================
+   CAPYBARA BODY TURN - Realistic throwing stance
+   ============================================ */
+
+/* Turn right - for left capybara throwing to the right */
+.capy-turn-right {
+  animation: capyTurnRight 0.4s ease-out forwards;
+}
+
+@keyframes capyTurnRight {
+  0% {
+    transform: rotate(0deg) translateX(0) skewY(0deg);
+  }
+  100% {
+    transform: rotate(12deg) translateX(20px) skewY(-3deg);
+  }
+}
+
+/* Turn left - for right capybara throwing to the left */
+.capy-turn-left {
+  animation: capyTurnLeft 0.4s ease-out forwards;
+}
+
+@keyframes capyTurnLeft {
+  0% {
+    transform: rotate(0deg) translateX(0) skewY(0deg);
+  }
+  100% {
+    transform: rotate(-12deg) translateX(-20px) skewY(3deg);
+  }
+}
+
+/* HEAD TURN - Additional head movement */
+@keyframes head-turn-right {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(8px) rotate(10deg); }
+}
+
+.animate-head-turn-right {
+  animation: head-turn-right 0.3s ease-out forwards;
+}
+
+/* HEAD EATING - Gentle bob while eating */
+@keyframes capy-eat-head {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(4px) rotate(-3deg); }
+  60% { transform: translateY(2px) rotate(2deg); }
+}
+
+.animate-capy-eat-head {
+  animation: capy-eat-head 0.45s ease-in-out infinite;
+}
+
+/* ============================================
+   ARM ANIMATIONS
+   ============================================ */
+
+/* ARM THROW MOTION - Wind up and release (release at 50% = 200ms to sync with food) */
+@keyframes arm-throw-motion {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  40% { transform: translateX(-18px) translateY(12px) rotate(-40deg); } /* Wind up */
+  50% { transform: translateX(25px) translateY(-30px) rotate(55deg); } /* RELEASE POINT - food flies here */
+  70% { transform: translateX(35px) translateY(-25px) rotate(65deg); } /* Follow through */
+  100% { transform: translateX(20px) translateY(-10px) rotate(35deg); } /* Return */
+}
+
+.animate-arm-throw-motion {
+  animation: arm-throw-motion 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ARM HOLD FOOD */
+@keyframes arm-hold-food {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(3deg); }
+}
+
+.animate-arm-hold-food {
+  animation: arm-hold-food 0.7s ease-in-out infinite;
+}
+
+/* ARM CATCH READY */
+@keyframes arm-catch-ready {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(15px) translateY(-20px) rotate(-15deg); }
+}
+
+.animate-arm-catch-ready {
+  animation: arm-catch-ready 0.3s ease-out forwards;
+}
+
+/* ============================================
+   FOOD TRAJECTORY - Physics-based parabolic motion
+   Using real projectile physics: y = -4h(x/d)(x/d - 1)
+   where h = max height, d = total distance
+   ============================================ */
+
+/* Food flying RIGHT - proper parabolic arc */
+.food-trajectory-right {
+  animation: foodFlyRight 1s cubic-bezier(0.2, 0, 0.8, 1) forwards;
+}
+
+@keyframes foodFlyRight {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(calc((100vw - 320px) * 0.1), calc(-180px * 0.36));
+  }
+  20% {
+    transform: translate(calc((100vw - 320px) * 0.2), calc(-180px * 0.64));
+  }
+  30% {
+    transform: translate(calc((100vw - 320px) * 0.3), calc(-180px * 0.84));
+  }
+  40% {
+    transform: translate(calc((100vw - 320px) * 0.4), calc(-180px * 0.96));
+  }
+  50% {
+    transform: translate(calc((100vw - 320px) * 0.5), calc(-180px * 1.0));
+  }
+  60% {
+    transform: translate(calc((100vw - 320px) * 0.6), calc(-180px * 0.96));
+  }
+  70% {
+    transform: translate(calc((100vw - 320px) * 0.7), calc(-180px * 0.84));
+  }
+  80% {
+    transform: translate(calc((100vw - 320px) * 0.8), calc(-180px * 0.64));
+  }
+  90% {
+    transform: translate(calc((100vw - 320px) * 0.9), calc(-180px * 0.36));
+  }
+  100% {
+    transform: translate(calc(100vw - 320px), 0);
+    opacity: 1;
+  }
+}
+
+/* Food flying LEFT - proper parabolic arc */
+.food-trajectory-left {
+  animation: foodFlyLeft 1s cubic-bezier(0.2, 0, 0.8, 1) forwards;
+}
+
+@keyframes foodFlyLeft {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  10% {
+    transform: translate(calc((-100vw + 320px) * 0.1), calc(-180px * 0.36));
+  }
+  20% {
+    transform: translate(calc((-100vw + 320px) * 0.2), calc(-180px * 0.64));
+  }
+  30% {
+    transform: translate(calc((-100vw + 320px) * 0.3), calc(-180px * 0.84));
+  }
+  40% {
+    transform: translate(calc((-100vw + 320px) * 0.4), calc(-180px * 0.96));
+  }
+  50% {
+    transform: translate(calc((-100vw + 320px) * 0.5), calc(-180px * 1.0));
+  }
+  60% {
+    transform: translate(calc((-100vw + 320px) * 0.6), calc(-180px * 0.96));
+  }
+  70% {
+    transform: translate(calc((-100vw + 320px) * 0.7), calc(-180px * 0.84));
+  }
+  80% {
+    transform: translate(calc((-100vw + 320px) * 0.8), calc(-180px * 0.64));
+  }
+  90% {
+    transform: translate(calc((-100vw + 320px) * 0.9), calc(-180px * 0.36));
+  }
+  100% {
+    transform: translate(calc(-100vw + 320px), 0);
+    opacity: 1;
+  }
+}
+
+/* Food spin while flying */
+.food-spin {
+  animation: foodSpin 1s linear forwards;
+}
+
+@keyframes foodSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(720deg); }
+}
+
+/* Shadow scales based on height */
+.food-shadow {
+  animation: foodShadow 1s ease-in-out forwards;
+}
+
+@keyframes foodShadow {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.3; }
+  50% { transform: translateX(-50%) scale(0.3); opacity: 0.1; }
+}
+
+/* ============================================
+   EATING ANIMATIONS
+   ============================================ */
+
+/* Food being eaten */
+@keyframes food-being-eaten {
+  0%, 100% { transform: scale(1) translateY(0); }
+  30% { transform: scale(0.92) translateY(3px); }
+  60% { transform: scale(1.02) translateY(-2px); }
+}
+
+.animate-food-being-eaten {
+  animation: food-being-eaten 0.4s ease-in-out infinite;
+}
+
+/* Mouth chewing */
+@keyframes mouth-chew {
+  0%, 100% { transform: scaleY(1); }
+  40% { transform: scaleY(0.5); }
+  70% { transform: scaleY(1.15); }
+}
+
+.animate-mouth-chew {
+  animation: mouth-chew 0.3s ease-in-out infinite;
+}
+
