@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Utensils, Clock, IndianRupee, CheckCircle, Car, Settings } from 'lucide-react';
-import { supabase } from './lib/supabase';
+import { Utensils, Clock, IndianRupee, CheckCircle, Car, Settings, AlertTriangle } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from './lib/supabase';
 import { MEAL_PRICES, MealPreference, LunchType } from './types';
 import Admin from './components/Admin';
 import Transport from './components/Transport';
@@ -478,6 +478,54 @@ function App() {
 
   if (showTransport) {
     return <Transport onBack={() => setShowTransport(false)} />;
+  }
+
+  // Show configuration error if Supabase is not set up
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white flex items-center justify-center p-8">
+        <div className="max-w-2xl w-full bg-slate-800/50 border border-slate-700 rounded-3xl p-12 text-center">
+          <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <AlertTriangle className="w-10 h-10 text-red-400" />
+          </div>
+          <h1 className="text-4xl font-bold mb-4">Configuration Required</h1>
+          <p className="text-lg text-gray-300 mb-8">
+            The application is missing Supabase environment variables.
+          </p>
+          <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-6 text-left mb-8">
+            <h2 className="text-xl font-semibold mb-4 text-orange-400">Setup Instructions:</h2>
+            <ol className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-start">
+                <span className="text-orange-400 font-bold mr-3">1.</span>
+                <span>Go to your repository settings on GitHub</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-400 font-bold mr-3">2.</span>
+                <span>Navigate to <strong className="text-white">Settings → Secrets and variables → Actions</strong></span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-orange-400 font-bold mr-3">3.</span>
+                <span>Add these repository secrets:</span>
+              </li>
+            </ol>
+            <div className="mt-4 space-y-2 ml-8">
+              <div className="bg-slate-800 border border-slate-600 rounded px-4 py-2 font-mono text-sm">
+                <span className="text-blue-400">VITE_SUPABASE_URL</span>
+              </div>
+              <div className="bg-slate-800 border border-slate-600 rounded px-4 py-2 font-mono text-sm">
+                <span className="text-blue-400">VITE_SUPABASE_ANON_KEY</span>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-gray-400">
+              After adding the secrets, the GitHub Actions workflow will automatically redeploy the site.
+            </p>
+          </div>
+          <p className="text-sm text-gray-500">
+            Need help? Contact your system administrator.
+          </p>
+        </div>
+      </div>
+    );
   }
 
   return (

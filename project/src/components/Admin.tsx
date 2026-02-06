@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Users, IndianRupee, TrendingUp, Download, ArrowLeft } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { Calendar, Users, IndianRupee, TrendingUp, Download, ArrowLeft, AlertTriangle } from 'lucide-react';
+import { supabase, isSupabaseConfigured } from '../lib/supabase';
 import { FoodOrder } from '../types';
 
 interface AdminProps {
@@ -37,8 +37,38 @@ function Admin({ onBack }: AdminProps) {
   });
 
   useEffect(() => {
-    fetchOrders();
+    if (isSupabaseConfigured) {
+      fetchOrders();
+    } else {
+      setLoading(false);
+    }
   }, []);
+
+  // Show configuration error if Supabase is not set up
+  if (!isSupabaseConfigured) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white p-8">
+        <div className="max-w-4xl mx-auto">
+          <button
+            onClick={onBack}
+            className="mb-8 flex items-center space-x-2 text-gray-400 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Back</span>
+          </button>
+          <div className="bg-slate-800/50 border border-slate-700 rounded-3xl p-12 text-center">
+            <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+              <AlertTriangle className="w-10 h-10 text-red-400" />
+            </div>
+            <h1 className="text-3xl font-bold mb-4">Configuration Required</h1>
+            <p className="text-gray-300">
+              Supabase environment variables are missing. Please configure them to access the admin panel.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const fetchOrders = async () => {
     try {
